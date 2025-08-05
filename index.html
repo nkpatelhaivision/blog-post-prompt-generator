@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Blog Post Prompt Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 SEO Blog Post Prompt Generator</h1>
+            <p>Create professional, SEO-optimized blog post briefs in seconds</p>
+        </div>
+        
+        <div class="form-container">
+            <form id="promptForm">
+                <!-- Keywords Section -->
+                <div class="section">
+                    <h3 class="section-title">🔑 Keywords & Topic</h3>
+                    <div class="row">
+                        <div class="field-group">
+                            <label for="mainKeyword">Main Keyword *</label>
+                            <input type="text" id="mainKeyword" placeholder="e.g., live video streaming" required>
+                        </div>
+                        <div class="field-group">
+                            <label for="relatedKeywords">Related Keywords (comma-separated)</label>
+                            <input type="text" id="relatedKeywords" placeholder="remote production, low latency, broadcast">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audience & Intent -->
+                <div class="section">
+                    <h3 class="section-title">👥 Audience & Intent</h3>
+                    <div class="field-group">
+                        <label for="targetAudience">Target Audience</label>
+                        <textarea id="targetAudience" placeholder="e.g., Broadcast engineers and production professionals seeking remote video solutions"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="field-group">
+                            <label for="searchIntent">Search Intent</label>
+                            <select id="searchIntent">
+                                <option value="Informational">Informational</option>
+                                <option value="Commercial">Commercial</option>
+                                <option value="Transactional">Transactional</option>
+                                <option value="Navigational">Navigational</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label for="funnelStage">Funnel Stage</label>
+                            <select id="funnelStage">
+                                <option value="Awareness">Awareness</option>
+                                <option value="Consideration">Consideration</option>
+                                <option value="Decision">Decision</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Requirements -->
+                <div class="section">
+                    <h3 class="section-title">🧰 SEO & Structure Options</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="featuredSnippet" checked>
+                            <label for="featuredSnippet">Target Featured Snippet</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="schemaMarkup" checked>
+                            <label for="schemaMarkup">Include Schema Markup</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="peopleAlsoAsk" checked>
+                            <label for="peopleAlsoAsk">Answer "People Also Ask"</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="internalLinks" checked>
+                            <label for="internalLinks">Include Internal Links</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="externalLinks">
+                            <label for="externalLinks">Add External Authority Links</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="faqSection" checked>
+                            <label for="faqSection">Include FAQ Section</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Specs -->
+                <div class="section">
+                    <h3 class="section-title">⚙️ Content Specifications</h3>
+                    <div class="row">
+                        <div class="field-group">
+                            <label for="wordCount">Word Count Target</label>
+                            <select id="wordCount">
+                                <option value="800-1200">800-1200 words (Short-form)</option>
+                                <option value="1200-1800" selected>1200-1800 words (Standard)</option>
+                                <option value="1800-2500">1800-2500 words (Long-form)</option>
+                                <option value="2500+">2500+ words (Comprehensive)</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label for="toneStyle">Tone & Style</label>
+                            <select id="toneStyle">
+                                <option value="Professional yet conversational">Professional yet conversational</option>
+                                <option value="Technical but approachable">Technical but approachable</option>
+                                <option value="Beginner-friendly">Beginner-friendly</option>
+                                <option value="Expert-level technical">Expert-level technical</option>
+                                <option value="Warm and empathetic">Warm and empathetic</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Goals -->
+                <div class="section">
+                    <h3 class="section-title">🎯 Business Goals</h3>
+                    <div class="row">
+                        <div class="field-group">
+                            <label for="businessGoal">Primary Business Goal</label>
+                            <select id="businessGoal">
+                                <option value="Generate qualified leads">Generate qualified leads</option>
+                                <option value="Drive product demos">Drive product demos</option>
+                                <option value="Increase newsletter signups">Increase newsletter signups</option>
+                                <option value="Build topical authority">Build topical authority</option>
+                                <option value="Drive website traffic">Drive website traffic</option>
+                                <option value="Support sales conversations">Support sales conversations</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label for="callToAction">Desired Call-to-Action</label>
+                            <input type="text" id="callToAction" placeholder="e.g., Request a demo, Download whitepaper, Contact sales">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optional Custom Instructions -->
+                <div class="section">
+                    <h3 class="section-title">📝 Additional Instructions (Optional)</h3>
+                    <div class="field-group">
+                        <label for="customInstructions">Custom Requirements or Notes</label>
+                        <textarea id="customInstructions" placeholder="Any specific requirements, competitor mentions, case studies to include, etc."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="generate-btn">🚀 Generate Blog Post Prompt</button>
+            </form>
+
+            <div id="output" class="output" style="display: none;">
+                <div class="output-header">
+                    <h3>📋 Your Generated Prompt</h3>
+                    <button class="copy-btn" onclick="copyToClipboard()">📋 Copy to Clipboard</button>
+                </div>
+                <pre id="generatedPrompt"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

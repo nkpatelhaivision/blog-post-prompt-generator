@@ -83,7 +83,9 @@ function collectFormData() {
         // Basic fields
         mainKeyword: document.getElementById('mainKeyword').value.trim(),
         relatedKeywords: document.getElementById('relatedKeywords').value.trim(),
+        blogTitle: document.getElementById('blogTitle').value.trim(),
         targetAudience: document.getElementById('targetAudience').value.trim(),
+        postGoals: document.getElementById('postGoals').value.trim(),
         searchIntent: document.getElementById('searchIntent').value,
         funnelStage: document.getElementById('funnelStage').value,
         wordCount: document.getElementById('wordCount').value,
@@ -137,6 +139,9 @@ function buildPromptString(data) {
     
     // Business Objectives
     prompt += `🎯 BUSINESS OBJECTIVES:\n`;
+    if (data.postGoals) {
+        prompt += `• Post Goals & Content Type: ${data.postGoals}\n`;
+    }
     prompt += `• Primary Goal: ${data.businessGoal}\n`;
     if (data.callToAction) {
         prompt += `• Call-to-Action: ${data.callToAction}\n`;
@@ -145,7 +150,16 @@ function buildPromptString(data) {
     
     // SEO Requirements
     prompt += `🧰 SEO & STRUCTURAL REQUIREMENTS:\n`;
-    prompt += `• SEO-optimized title (55-60 characters) with primary keyword\n`;
+    
+    // Handle title requirements
+    if (data.blogTitle) {
+        prompt += `• Use this specific title: "${data.blogTitle}"\n`;
+        prompt += `• Ensure title is SEO-optimized and contains primary keyword\n`;
+    } else {
+        prompt += `• Create 3-5 SEO-optimized title options (55-60 characters each) with primary keyword\n`;
+        prompt += `• Choose the most compelling title for the post\n`;
+    }
+    
     prompt += `• Meta description (150-160 characters) with compelling CTA\n`;
     prompt += `• Primary keyword naturally placed in first 100 words\n`;
     prompt += `• Keyword density: 1-2% (avoid keyword stuffing)\n`;
